@@ -1,12 +1,10 @@
 layout: post
 title: Codility - Lesson 1 - Time Complexity
-description: "Codility coding problems"
 date: 2015/10/09
-category: articles
 tags: [codility,algorithms]
-image:
-  feature: texture-feature-05.jpg
 ---
+
+> Disclaimer: If you're using this to cheat on job interviews, it's not my fault, however it goes. If you're catching someone cheating, make sure it's not me. 
 
 I decided to go through the Codility coding lessons, using Javascript. I'll be posting my solutions here. 
 
