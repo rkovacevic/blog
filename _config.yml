@@ -72,3 +72,9 @@ deploy:
 
 # Disqus
 disqus_shortname: rkovacevic
+
+
+feed:
+  type: atom
+  path: atom.xml
+  limit: 200
