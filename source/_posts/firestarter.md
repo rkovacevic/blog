@@ -4,7 +4,7 @@ title: Playing with NodeJS
 description: "Tales of making a Twitter clone with Node."
 date: 2014/10/08
 category: articles
-tags: [node, angular, firestarter, mongo]
+tags: [nodejs, angular, firestarter, mongo,javascript]
 image:
   feature: texture-feature-05.jpg
 ---

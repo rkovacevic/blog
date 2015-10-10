@@ -1,7 +1,7 @@
 layout: post
 title: Codility - Lesson 1 - Time Complexity
 date: 2015/10/09
-tags: [codility,algorithms]
+tags: [codility,algorithms,javascript]
 ---
 
 > Disclaimer: If you're using this to cheat on job interviews, it's not my fault, however it goes. If you're catching someone cheating, make sure it's not me. 

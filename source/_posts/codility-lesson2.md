@@ -1,7 +1,7 @@
 layout: post
 title: Codility - Lesson 2 - Counting Elements
 date: 2015/10/10
-tags: [codility,algorithms]
+tags: [codility,algorithms,javascript]
 ---
 
 > Disclaimer: If you're using this to cheat on job interviews, it's not my fault, however it goes. If you're catching someone cheating, make sure it's not me. 
@@ -45,14 +45,16 @@ function solution(A) {
     for (var i = 0; i < A.length; i++) {
         // Zero index it
         var v = A[i] - 1;
-        // Special case, if you get a number larger than array length, you can be sure it's not a permutation
+        // Special case, if you get a number larger than array length, 
+        // you can be sure it's not a permutation
         if (v >= A.length) return 0;
         // If we got the same index second time, it's not a permutation
         if (perm[v] === true) return 0;
         // Mark that index was visited
         perm[v] = true;
     }
-    // If we passed all and no index was visited twice, it must be a permutation
+    // If we passed all and no index was visited twice, 
+    // it must be a permutation
     return 1;
 }
 {% endcodeblock %}
@@ -74,8 +76,8 @@ function solution(A) {
         if (integers[i] !== true) return i;
     }
     
-    // In case A was a sequence of numbers, like [1,2,3], this will return the next int
-    // (that's just how JS arrays work)
+    // In case A was a sequence of numbers, like [1,2,3], 
+    // this will return the next int (that's just how JS arrays work)
     // Also checks special case when there were no positive integers. 
     return integers.length === 0 ? 1 : integers.length;
 }
