@@ -92,7 +92,7 @@ function solution(A) {
 
 Sadly, performance is not good enough, I think Object.keys is doing a copy. 
 
-Then I was thinking for a long time, and couldn't come up with the solution. Finally, I just gave up and googled for an idea. 
+This is the efficient solution:
 
 {% codeblock lang:javascript %}
 function solution(A) {
@@ -110,12 +110,64 @@ function solution(A) {
 }
 {% endcodeblock %}
 
-The reason this didn't occur to me, is that I don't understand how is this considered O(N * log N). JS sort is quicksort, which is O(N * N) at worst, and with the the last loop, that would make this solution O(N * N * N). 
-
 ## 04 NumberOfDiscIntersections
 
-// in progress
+Brute force:
 
 {% codeblock lang:javascript %}
+function solution(A) {
+    if (A.length < 2) return 0;
+    var counter = 0;
+    for (var i = 0; i < A.length - 1; ++i) {
+        for (var j = i + 1; j < A.length; ++j) {
+            // console.log(i + ' ' + A[i] + ' - ' + j + ' ' + A[j]);
+            if ((i < j && i + A[i] >= j - A[j]) || 
+                (i > j && i - A[i] <= j + A[j])) {
+                counter++;
+                if (counter > 10000000) return -1;
+            }
+        }
+    }
+    return counter;
+}
+{% endcodeblock %}
 
+More efficient way is to make a list of all points that intersect the X axis, and walk that list, keeping count in how many circles we are:
+
+{% codeblock lang:javascript %}
+const CIRCLE_START = -1;
+const CIRCLE_END = 1;
+
+function solution(A) {
+    if (A.length < 2) return 0;
+    
+    var events = [];
+    for (var i = 0; i < A.length; ++i) {
+        events.push({
+            event: CIRCLE_START,
+            location: i - A[i]
+        });
+        events.push({
+            event: CIRCLE_END,
+            location: i + A[i]
+        });
+    }
+    events.sort(function(a, b) {
+        if (a.location !== b.location) return a.location - b.location;
+        return a.event;
+    });
+    var intersectingCircles = 0;
+    var circleCounter = 0;
+    for (i = 0; i < events.length; ++i) {
+        var e = events[i];
+        if (e.event === CIRCLE_START) {
+            intersectingCircles += circleCounter;
+            if (intersectingCircles > 10000000) return -1;
+            circleCounter++;
+        } else {
+            circleCounter--;
+        }
+    }
+    return intersectingCircles;
+}
 {% endcodeblock %}
