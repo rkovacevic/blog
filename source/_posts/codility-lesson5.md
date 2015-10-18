@@ -1,6 +1,6 @@
 layout: post
 title: Codility - Lesson 5 - Stacks and Queues
-date: 2015/10/18
+date: 2015/10/17
 tags: [codility,algorithms,javascript]
 ---
 
