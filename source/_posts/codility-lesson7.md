@@ -36,7 +36,7 @@ function solution(A) {
 }
 {% endcodeblock %}
 
-02 MaxProfit
+## 02 MaxProfit
 
 {% codeblock lang:javascript %}
 function solution(A) {
@@ -55,7 +55,7 @@ function solution(A) {
 }
 {% endcodeblock %}
 
-03 MaxSliceSum
+## 03 MaxSliceSum
 
 This is just Kadane's algorithm, without zero-lenght subarrays being allowed. 
 
