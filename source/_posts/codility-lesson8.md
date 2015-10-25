@@ -1,5 +1,5 @@
 layout: post
-title: Codility - Lesson 8 - Maximum Slice Problem
+title: Codility - Lesson 8 - Prime and composite numbers
 date: 2015/10/26
 tags: [codility,algorithms,javascript]
 ---
@@ -34,7 +34,7 @@ function solution(N) {
 }
 {% endcodeblock %}
 
-## 03
+## 03 Peaks
 
 Correct, but inefficient solution, that tests every divisor, by checking if each section contains peaks.
 
@@ -110,8 +110,8 @@ function solution(A) {
 }
 {% endcodeblock %}
 
-## 04
+## 04 Flags
 
 {% codeblock lang:javascript %}
-
+// TODO
 {% endcodeblock %}
