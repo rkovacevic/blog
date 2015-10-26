@@ -1,7 +1,7 @@
 <article id="<%= page.layout %>-<%= page.slug %>" class="post page">
-	<%- partial('post/gallery') %>
+	<%- partial('_partial/post/gallery') %>
 	<header class="entry-header">
-		<%- partial('post/title', {class_name: 'article-title'}) %>
+		<%- partial('_partial/post/title', {class_name: 'article-title'}) %>
 	</header>
 	<div class="entry-content">
 		<% if (page.excerpt && index){ %>
