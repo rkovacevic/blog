@@ -1,18 +1,18 @@
-<article id="<%= page.layout %>-<%= page.slug %>" class="post page" style="padding-left: -200px; ">
+<article id="<%= page.layout %>-<%= page.slug %>" class="post page">
 	<%- partial('post/gallery') %>
 	<header class="entry-header">
 		<%- partial('post/title', {class_name: 'article-title'}) %>
 	</header>
 	<div class="entry-content">
-		<% if (post.excerpt && index){ %>
-			<%- post.excerpt %>
+		<% if (page.excerpt && index){ %>
+			<%- page.excerpt %>
 			<% if (theme.excerpt_link){ %>
 				<p class="article-more-link">
-					<a href="<%- config.root %><%- post.path %>#more"><%= theme.excerpt_link %></a>
+					<a href="<%- config.root %><%- page.path %>#more"><%= theme.excerpt_link %></a>
 				</p>
       <% } %>
     <% } else { %>
-    	<%- post.content %>
+    	<%- page.content %>
     <% } %>
 	</div>
 </article>
