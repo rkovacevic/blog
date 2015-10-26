@@ -112,6 +112,27 @@ function solution(A) {
 
 ## 04 Flags
 
+** NOT DONE ** This solution is incorrect, maybe I'll come back to this. 
+
 {% codeblock lang:javascript %}
-// TODO
+function solution(A) {
+    var peaks = [];
+    for (var i = 1; i < A.length - 1; i++) {
+        if (A[i - 1] < A[i] && A[i] > A[i + 1]) peaks.push(i);
+    }
+    
+    for (var flags = peaks.length; flags > 0; flags--) {
+        var flagsPlaced = 1;
+        var previousFlag = peaks[0];
+        for (i = 1; i < peaks.length; i++) {
+            var dst = peaks[i] - previousFlag;
+            if (dst >= flags) {
+                flagsPlaced++;
+                previousFlag = peaks[i];
+            }
+        }
+        if (flagsPlaced === flags) return flags;
+    }
+    return 0;
+}
 {% endcodeblock %}
