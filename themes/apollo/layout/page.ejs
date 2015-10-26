@@ -1,6 +1,6 @@
 <article id="<%= page.layout %>-<%= page.slug %>" class="post page">
 	<header class="entry-header">
-		<%- partial('_partial/post/title', {class_name: 'article-title', post:page}) %>
+		<%- partial('_partial/post/title', {class_name: 'article-title', post:page, index: false}) %>
 	</header>
 	<div class="entry-content">
 		<% if (page.excerpt && index){ %>
