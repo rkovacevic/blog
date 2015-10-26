@@ -1,8 +1,8 @@
 # Header
 menu:
   Home: /
-  Posts: /archives
-  Projects: /Projects
+  Posts: /posts
+  Projects: /projects
 rss: /atom.xml
 
 # Content
