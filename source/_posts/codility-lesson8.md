@@ -4,7 +4,7 @@ date: 2015/10/26
 tags: [codility,algorithms,javascript]
 ---
 
-> Disclaimer: If you're using this to cheat on job interviews, it's not my fault, however it goes. If you're catching someone cheating, make sure it's not me. 
+> Disclaimer: If you're using this to cheat on job interviews, it's not my fault, however it goes. If you're catching someone cheating, make sure it's not me.
 
 
 ## 01 CountFactors
@@ -73,7 +73,7 @@ function solution(A) {
 
 Here's a better one, that instead of checking each group (or section), goes through the peaks, and checks if there's a peak for each group.
 
-Still not good enough, only gets 60% for performance, but I'm moving on for now. 
+Still not good enough, only gets 60% for performance, but I'm moving on for now.
 
 {% codeblock lang:javascript %}
 function isPeakInEachGroupForDivisor(A, peaks, d) {
@@ -112,27 +112,41 @@ function solution(A) {
 
 ## 04 Flags
 
-** NOT DONE ** This solution is incorrect, maybe I'll come back to this. 
+** NOT DONE ** This solution is incorrect, maybe I'll come back to this.
 
 {% codeblock lang:javascript %}
 function solution(A) {
-    var peaks = [];
+    var peaks = []
+    var lastPeak
+    var numberOfPeaks = 0
     for (var i = 1; i < A.length - 1; i++) {
-        if (A[i - 1] < A[i] && A[i] > A[i + 1]) peaks.push(i);
+        if (A[i-1] < A[i] && A[i] > A[i+1]) {
+            numberOfPeaks++
+            if (lastPeak !== undefined) {
+                peaks.push(i - lastPeak)
+            }
+            lastPeak = i
+        }
     }
-    
-    for (var flags = peaks.length; flags > 0; flags--) {
-        var flagsPlaced = 1;
-        var previousFlag = peaks[0];
-        for (i = 1; i < peaks.length; i++) {
-            var dst = peaks[i] - previousFlag;
-            if (dst >= flags) {
-                flagsPlaced++;
-                previousFlag = peaks[i];
+    if (numberOfPeaks === 0) return 0
+    if (numberOfPeaks === 1) return 1
+
+    var numberOfFlags = Math.min(peaks.length + 1, Math.floor(Math.sqrt(A.length)))
+
+    while (numberOfFlags > 0) {
+        var placedFlags = 1
+        var distanceFromLastFlag = 0
+        for (i = 0; i < peaks.length; i++) {
+            distanceFromLastFlag += peaks[i]
+            if (distanceFromLastFlag >= numberOfFlags) {
+                placedFlags++
+                distanceFromLastFlag = 0
             }
         }
-        if (flagsPlaced === flags) return flags;
+        if (placedFlags >= numberOfFlags) return placedFlags
+        numberOfFlags--
     }
-    return 0;
+
+    return numberOfFlags
 }
 {% endcodeblock %}
