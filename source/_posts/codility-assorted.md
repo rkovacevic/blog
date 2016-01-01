@@ -196,3 +196,36 @@ function solution(A, B) {
     return count
 }
 {% endcodeblock %}
+
+## CommonPrimeDivisors
+
+NOT CORRECT
+
+{% codeblock lang:javascript %}
+function gcd(a, b) {
+    if (a % b === 0) return b
+    else return gcd(b, a % b)
+}
+
+function hasSamePrimeDivisors(a, b) {
+    var initialA = a
+    var g = gcd(a, b)
+    while (g !== 1) {
+        a = a / g
+        b = b / g
+        g = gcd(a, b)
+    }
+    return initialA % b === 0
+}
+
+function solution(A, B) {
+    var count = 0
+    for (var i = 0; i < A.length; i++) {
+        if (hasSamePrimeDivisors(
+            Math.min(A[i], B[i]),
+            Math.max(A[i], B[i])
+        )) count++
+    }
+    return count
+}
+{% endcodeblock %}

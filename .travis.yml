@@ -8,7 +8,7 @@
 #     1. Generate github access token on https://github.com/settings/applications#personal-access-tokens
 #     2. Add an Environment Variable on https://travis-ci.org/{github username}/{repository name}/settings/env_vars
 #         Variable Name: DEPLOY_REPO
-#         Variable Value: https://{githb access token}@github.com/{github username}/{repository name}.git 
+#         Variable Value: https://{githb access token}@github.com/{github username}/{repository name}.git
 #         Example: DEPLOY_REPO=https://6b75cfe9836f56e6d21187622730889874476c23@github.com/jkeylu/test-hexo-on-travis-ci.git
 
 language: node_js
@@ -22,6 +22,7 @@ branches:
 
 before_install:
 - npm install -g hexo
+- npm install -g resume-cli
 
 install:
 - npm install
@@ -37,10 +38,15 @@ script:
 - hexo generate
 
 after_success:
+- cd resume
+- resume export index.html -t elegant
+- cd ..
 - mkdir .deploy
 - cd .deploy
 - git clone --depth 1 --branch master --single-branch $DEPLOY_REPO . || (git init && git remote add -t master origin $DEPLOY_REPO)
 - rm -rf ./*
+- mkdir resume
+- cp -r ../resume .
 - cp -r ../public/* .
 - git add -A .
 - git commit -m 'Site updated'
