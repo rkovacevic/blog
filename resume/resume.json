@@ -43,9 +43,9 @@
 
             "summary": "",
             "highlights": [
-                "Build an algorithm for artist to detect if their music was violating copy right infringement laws",
-                "Successfully won Techcrunch Disrupt",
-                "Optimized an algorithm that holds the current world record for Weisman Scores"
+                "Worked on critical project for large clients in the telecommunications industry",
+                "Developed an open source implementation of Diameter protocol in NodeJS",
+                "Developed testing tools in Python"
             ]
         },
         {
@@ -54,8 +54,9 @@
             "website": "http://www.aquicore.com",
             "startDate": "2012-07-01",
             "endDate": "2014-09-01",
-            "summary": "One of the first employees in a startup that grow to 20+ people",
+            "summary": "",
             "highlights": [
+                "One of the first employees in a startup that grow to 20+ people",
                 "Designed and developed RESTful backend data collection system",
                 "Worked on creating lean development cycle proceedures",
                 "Coordinated with developers in Argentina, Russia, USA...",
@@ -72,7 +73,7 @@
             "website": "http://www.samurai-digital.com",
             "startDate": "2011-05-01",
             "endDate": "2012-12-01",
-            "summary": "Pied Piper is a multi-platform technology based on a proprietary universal compression algorithm that has consistently fielded high Weisman Scores™ that are not merely competitive, but approach the theoretical limit of lossless compression.",
+            "summary": "",
             "highlights": [
                 "Developed mobile applications for major brands like Bosch, Bayer, Swiss Post, Mitsubishi and Toyota",
                 "Lead development teams in projects for key international clients",
@@ -86,7 +87,7 @@
             "website": "http://www.nth-media.hr/",
             "startDate": "2008-11-01",
             "endDate": "2011-05-01",
-            "summary": "Pied Piper is a multi-platform technology based on a proprietary universal compression algorithm that has consistently fielded high Weisman Scores™ that are not merely competitive, but approach the theoretical limit of lossless compression.",
+            "summary": "",
             "highlights": [
                 "Integration with telecom operators in Switzerland and all over the world",
                 "Developing mobile payment and service delivery solutions",
@@ -129,7 +130,7 @@
         {
             "name": "Tools",
             "keywords": [
-                "UNIX",
+                "Linux",
                 "Git",
                 "PostgreSQL"
             ]
