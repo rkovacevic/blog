@@ -12,26 +12,16 @@ I decided to go through the Codility coding lessons, using Javascript. I'll be p
 
 {% codeblock lang:javascript %}
 function solution(A) {
-    var forwardSum = []
-    var backwardSum = []
-
+    var prefixSum = []
     for (var i = 0; i < A.length; i++) {
-        forwardSum[i] = (forwardSum[i-1] | 0) + A[i]
+        prefixSum[i] = (prefixSum[i-1] | 0) + A[i]
     }
-
-    for (i = A.length - 1; i >= 0; i--) {
-        backwardSum[i] = (backwardSum[i+1] | 0) + A[i]
+    var minDiff
+    for (i = 0; i < prefixSum.length - 1; i++) {
+        var diff = Math.abs(prefixSum[i] - (prefixSum[A.length - 1] - prefixSum[i]))
+        if (minDiff === undefined || diff < minDiff) minDiff = diff
     }
-
-    var minimalDifference
-    for (i = 0; i < A.length -1; i++) {
-        var difference = Math.abs(forwardSum[i] - backwardSum[i+1])
-        if (minimalDifference === undefined || difference < minimalDifference) {
-            minimalDifference = difference
-        }
-    }
-
-    return minimalDifference
+    return minDiff
 }
 {% endcodeblock %}
 
