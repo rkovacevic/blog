@@ -389,3 +389,24 @@ function solution(A) {
     return max[A.length - 1]
 }
 {% endcodeblock %}
+
+## Ladder
+
+Only works for small numbers.
+
+{% codeblock lang:javascript %}
+function solution(A, B) {
+    var maxA
+    A.forEach(a => maxA = Math.max(maxA || Number.MIN_SAFE_INTEGER, a))
+
+    fibs = [0, 1]
+    while (fibs.length <= maxA + 1) {
+        fibs[fibs.length] = fibs[fibs.length - 1] + fibs[fibs.length -2]
+    }
+    var solution = []
+    for (var i = 0; i < A.length; i++) {
+        solution.push(fibs[A[i] + 1] % Math.pow(2, B[i]))
+    }
+    return solution
+}
+{% endcodeblock %}
