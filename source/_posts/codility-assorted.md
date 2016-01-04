@@ -129,7 +129,7 @@ function solution(K, A) {
 }
 {% endcodeblock %}
 
-## FibFron
+## FibFrog
 
 About 80% correct, because it's a greedy solution.
 
@@ -163,6 +163,33 @@ function solution(A) {
     }
     if (position === A.length) return hops.length
     return -1
+}
+{% endcodeblock %}
+
+And a 100% correct solution, using dynamic programming:
+
+{% codeblock lang:javascript %}
+function solution(A) {
+    var fibs = [0, 1]
+    while (fibs[fibs.length - 1] < A.length + 2) {
+        fibs[fibs.length] = fibs[fibs.length - 1] + fibs[fibs.length - 2]
+    }
+
+    A[-1] = 1
+    var minJumpsToHere = []
+    minJumpsToHere[-1] = 0
+    for (var i = -1; i <= A.length; i++) {
+        if (A[i] === 0 || minJumpsToHere[i] === undefined) continue
+        for (var j = 2; j < fibs.length; j++) {
+            if (A[i + fibs[j]] === 1 || i + fibs[j] === A.length) {
+                minJumpsToHere[i + fibs[j]] = Math.min(
+                    (minJumpsToHere[i + fibs[j]] || Number.MAX_SAFE_INTEGER),
+                    minJumpsToHere[i] + 1
+                )
+            }
+        }
+    }
+    return minJumpsToHere[A.length] || -1
 }
 {% endcodeblock %}
 
