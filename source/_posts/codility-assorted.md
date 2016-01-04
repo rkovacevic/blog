@@ -229,3 +229,136 @@ function solution(A, B) {
     return count
 }
 {% endcodeblock %}
+
+
+## CountSemiprimes
+
+This solution is ineffiecient, but correct. It creates a prime sieve, then semiprime sieve, then a prefix sum of semiprimes.
+
+{% codeblock lang:javascript %}
+function solution(N, P, Q) {
+    var primeSieve = [false, false]
+    for (var i = 2; i < Math.sqrt(N); i++) {
+        for (var j = i + i; j <= N; j += i) {
+            primeSieve[j] = false
+        }
+    }
+    var primes = []
+    for (i = 0; i <= N; i++) {
+        if (primeSieve[i] !== false) primes.push(i)
+    }
+
+    var semiprimesSieve = []
+    for (i = 0; i < primes.length; i++) {
+        for (j = i; j < primes.length; j++) {
+            semiprimesSieve[primes[i] * primes[j]] = true
+        }
+    }
+    var semiprimesPrefixSum = []
+    for (i = 0; i <= N; i++) {
+        if (semiprimesSieve[i] === true) {
+            semiprimesPrefixSum[i] = (semiprimesPrefixSum[i -1] | 0) + 1
+        } else {
+            semiprimesPrefixSum[i] = (semiprimesPrefixSum[i -1] | 0)
+        }
+    }
+
+    var solution = []
+    for (i = 0; i < P.length; i++) {
+        solution.push(semiprimesPrefixSum[Q[i]] - (semiprimesPrefixSum[P[i] - 1] | 0))
+    }
+    return solution
+}
+{% endcodeblock %}
+
+Then I optimized it, but still fails some performance tests:
+
+{% codeblock lang:javascript %}
+function solution(N, P, Q) {
+    var sieve = [false, false]
+    // Create a prime sieve
+    for (var i = 2; i < Math.sqrt(N); i++) {
+        for (var j = i + i; j <= N; j += i) {
+            sieve[j] = false
+        }
+    }
+    // Create a semiprime sieve (in the same one, but sets true for semiprimes)
+    for (i = 0; i <= N; i++) {
+        loop: for (j = i; j <= N; j++) {
+            if (sieve[i] === undefined && sieve[j] === undefined)
+            sieve[i * j] = true
+            if (i * j > N) break loop
+        }
+    }
+    // Prefix sum semiprimes
+    var semiprimesPrefixSum = []
+    for (i = 0; i <= N; i++) {
+        if (sieve[i] === true) {
+            semiprimesPrefixSum[i] = (semiprimesPrefixSum[i -1] | 0) + 1
+        } else {
+            semiprimesPrefixSum[i] = (semiprimesPrefixSum[i -1] | 0)
+        }
+    }
+
+    var solution = []
+    for (i = 0; i < P.length; i++) {
+        solution.push(semiprimesPrefixSum[Q[i]] - (semiprimesPrefixSum[P[i] - 1] | 0))
+    }
+    return solution
+}
+{% endcodeblock %}
+
+## CountNonDivisible
+
+{% codeblock lang:javascript %}
+function solution(A) {
+    // count[i] = number of times i appears in A
+    var count = []
+    // divisors[i] = number of divisors for i
+    var divisors = []
+    var max = A[0]
+    A.forEach(n => {
+        count[n] = (count[n] | 0) + 1
+        divisors[n] = []
+        max = Math.max(n, max)
+    })
+
+    // Sieve of E. for calculating divisors for numbers up to max
+    for (var i = 1; i*i <= max; i++) {
+        for (var j = i; j <= max; j += i) {
+            if (divisors[j] !== undefined) {
+                if (divisors[j].indexOf(i) < 0) divisors[j].push(i)
+                if (divisors[j].indexOf(j / i) < 0) divisors[j].push(j / i)
+            }
+        }
+    }
+
+    var solution = []
+    A.forEach(n => {
+        // We take every divisor, see how many times it appears in A, and add them all up
+        var divisorsForElement = 0
+        divisors[n].forEach(d => divisorsForElement += (count[d] | 0))
+        // Then we subtract number of divisors from total number of elements in A
+        solution.push(A.length - divisorsForElement)
+    })
+    return solution
+}
+{% endcodeblock %}
+
+## NumberSolitare
+
+{% codeblock lang:javascript %}
+function solution(A) {
+    var max = [A[0]]
+    for (var i = 0; i < A.length; i++) {
+        for (var j = 1; j <= 6; j++) {
+            if (i + j >= A.length) continue
+            max[i + j] = Math.max(
+                (max[i + j] || Number.MIN_SAFE_INTEGER),
+                max[i] + A[i + j]
+            )
+        }
+    }
+    return max[A.length - 1]
+}
+{% endcodeblock %}
