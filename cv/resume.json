@@ -1,0 +1,165 @@
+{
+    "basics": {
+        "name": "Robert Kovačević",
+        "label": "Software Developer",
+        "picture": "",
+        "email": "robert.kovacevic1@gmail.ocm",
+        "phone": "skype:robert.kovacevic1",
+        "website": "http://rkovacevic.github.io",
+        "summary": "",
+        "location": {
+            "city": "Osijek",
+            "countryCode": "Croatia"
+        },
+        "profiles": [
+            {
+                "network": "LinkedIn",
+                "username": "rkovacevic",
+                "url": "http://hr.linkedin.com/in/rkovacevic"
+            },
+            {
+                "network": "Twitter",
+                "username": "rkovacevic",
+                "url": "https://twitter.com/rkovacevic"
+            },
+            {
+                "network": "GitHub",
+                "username": "rkovacevic",
+                "url": "http://github.com/rkovacevic"
+            },
+            {
+                "network": "StackOverflow",
+                "username": "rkovacevic",
+                "url": "http://stackoverflow.com/users/321734/robert-kova%C4%8Devi%C4%87"
+            }
+        ]
+    },
+    "work": [
+        {
+            "company": "Siemens Convergence Creators",
+            "position": "Senior Software Developer",
+            "website": "http://www.convergence-creators.siemens.com",
+            "startDate": "2015-02-01",
+
+            "summary": "",
+            "highlights": [
+                "Build an algorithm for artist to detect if their music was violating copy right infringement laws",
+                "Successfully won Techcrunch Disrupt",
+                "Optimized an algorithm that holds the current world record for Weisman Scores"
+            ]
+        },
+        {
+            "company": "Aquicore",
+            "position": "Senior Software Developer / System Architect",
+            "website": "http://www.aquicore.com",
+            "startDate": "2012-07-01",
+            "endDate": "2014-09-01",
+            "summary": "One of the first employees in a startup that grow to 20+ people",
+            "highlights": [
+                "Designed and developed RESTful backend data collection system",
+                "Worked on creating lean development cycle proceedures",
+                "Coordinated with developers in Argentina, Russia, USA...",
+                "Communicated with partners and clients",
+                "Coordinated and implemented EPA Energy Star integration",
+                "Worked on backend development in Java SE, Play Framework, Hibernate JPA, JUnit, PostgreSQL",
+                "Worked on frontend development in Javascript, AngularJS, Lodash, JQuery",
+                "Participated in agile team workflow, using git, Jenkins, SonarSource, with deployments to Heroku and AWS EC2"
+            ]
+        },
+        {
+            "company": "Samurai Digital",
+            "position": "Senior Software Developer",
+            "website": "http://www.samurai-digital.com",
+            "startDate": "2011-05-01",
+            "endDate": "2012-12-01",
+            "summary": "Pied Piper is a multi-platform technology based on a proprietary universal compression algorithm that has consistently fielded high Weisman Scores™ that are not merely competitive, but approach the theoretical limit of lossless compression.",
+            "highlights": [
+                "Developed mobile applications for major brands like Bosch, Bayer, Swiss Post, Mitsubishi and Toyota",
+                "Lead development teams in projects for key international clients",
+                "Communicated with clients on product design and roadmap",
+                "Coached junior team members"
+            ]
+        },
+        {
+            "company": "NTH Media",
+            "position": "Software Developer",
+            "website": "http://www.nth-media.hr/",
+            "startDate": "2008-11-01",
+            "endDate": "2011-05-01",
+            "summary": "Pied Piper is a multi-platform technology based on a proprietary universal compression algorithm that has consistently fielded high Weisman Scores™ that are not merely competitive, but approach the theoretical limit of lossless compression.",
+            "highlights": [
+                "Integration with telecom operators in Switzerland and all over the world",
+                "Developing mobile payment and service delivery solutions",
+                "Development on mission critical micropayment and service delivery platforms",
+                "Lead projects, coordinated with upper management, partners and customers",
+                "Technology stack based in Java, with several interconnected platforms, some J2EE (Glassfish and JBoss) and some Spring based",
+                "Used JSF, JSP, Tomcat, Maven, Ant, JUnit, etc.",
+                "Maintained and deployed to UNIX (Debian) platform"
+            ]
+        }
+    ],
+    "education": [
+        {
+            "institution": "Faculty of Electrical Engineering Osijek",
+            "area": "Computer Science",
+            "studyType": "Bachelor",
+            "startDate": "2002-09-01",
+            "endDate": "2008-07-01"
+        }
+    ],
+    "skills": [
+        {
+            "name": "Programming languages",
+            "keywords": [
+                "Javascript",
+                "Java",
+                "Objective C"
+            ]
+        },
+        {
+            "name": "Web Development",
+            "keywords": [
+                "React",
+                "Redux",
+                "Angular",
+                "Node",
+                "PlayFramework"
+            ]
+        },
+        {
+            "name": "Tools",
+            "keywords": [
+                "UNIX",
+                "Git",
+                "PostgreSQL"
+            ]
+        }
+    ],
+    "languages": [
+        {
+            "language": "English",
+            "fluency": "Fluent"
+        },
+        {
+            "language": "Croatian",
+            "fluency": "Native speaker"
+        }
+    ],
+    "interests": [
+        {
+            "name": "Cycling"
+        },
+        {
+            "name": "History"
+        },
+        {
+            "name": "Gym"
+        }
+    ],
+    "references": [
+        {
+            "name": "Logan Soya, CEO, Aquicore",
+            "reference": "Amazing stuff! Really enjoyed collaborating!"
+        }
+    ]
+}
