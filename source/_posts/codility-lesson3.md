@@ -4,9 +4,6 @@ date: 2015/10/15
 tags: [codility,algorithms,javascript]
 ---
 
-> Disclaimer: If you're using this to cheat on job interviews, it's not my fault, however it goes. If you're catching someone cheating, make sure it's not me.
-
-
 ## 01 CountDiv
 
 This one took me a while, and I'm still not really sure why this solution works, but it does. Dividing the difference by K is the intuitive part, but I also had to align A and B to first divisible integer, and then add 1 to the result.

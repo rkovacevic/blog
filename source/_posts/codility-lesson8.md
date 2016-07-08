@@ -4,9 +4,6 @@ date: 2015/10/26
 tags: [codility,algorithms,javascript]
 ---
 
-> Disclaimer: If you're using this to cheat on job interviews, it's not my fault, however it goes. If you're catching someone cheating, make sure it's not me.
-
-
 ## 01 CountFactors
 
 {% codeblock lang:javascript %}

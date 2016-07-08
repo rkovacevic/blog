@@ -4,9 +4,6 @@ date: 2015/10/17
 tags: [codility,algorithms,javascript]
 ---
 
-> Disclaimer: If you're using this to cheat on job interviews, it's not my fault, however it goes. If you're catching someone cheating, make sure it's not me. 
-
-
 ## 01 Nesting
 
 {% codeblock lang:javascript %}
@@ -54,18 +51,18 @@ function solution(H) {
 {% codeblock lang:javascript %}
 function solution(S) {
     var stack = [];
-    
+
     for (var i = 0; i < S.length; i++) {
         var x = S.charAt(i);
         if (x === '(' || x === '[' || x === '{') stack.push(x);
         else {
             var y = stack.pop();
-            if (!(x === ')' && y === '(' || 
+            if (!(x === ')' && y === '(' ||
                 x === ']' && y === '[' ||
                 x === '}' && y === '{')) return 0;
         }
     }
-    
+
     if (stack.length === 0) return 1;
     return 0;
 }
@@ -73,7 +70,7 @@ function solution(S) {
 
 ## 04 Fish
 
-There is one performance test that fails with this, probably because of the recursion. I could rewrite it as a loop, but I believe the recursion problem will be solved in ES6. 
+There is one performance test that fails with this, probably because of the recursion. I could rewrite it as a loop, but I believe the recursion problem will be solved in ES6.
 
 {% codeblock lang:javascript %}
 const UPSTREAM = 0;
@@ -82,11 +79,11 @@ const DOWNSTREAM = 1;
 function solution(A, B) {
     var upstreamStack = [];
     var downstreamStack = [];
-    
+
     var handleFish = function(i) {
         var size = A[i];
         var direction = B[i];
-        
+
         if (direction === UPSTREAM) {
             if (downstreamStack.length === 0) {
                 upstreamStack.push(i);
@@ -102,11 +99,11 @@ function solution(A, B) {
             downstreamStack.push(i);
         }
     };
-    
+
     for (var i = 0; i < A.length; i++) {
         handleFish(i);
     }
-    
+
     return upstreamStack.length + downstreamStack.length;
 }
 {% endcodeblock %}

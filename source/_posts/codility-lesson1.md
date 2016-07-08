@@ -4,8 +4,6 @@ date: 2015/10/09
 tags: [codility,algorithms,javascript]
 ---
 
-> Disclaimer: If you're using this to cheat on job interviews, it's not my fault, however it goes. If you're catching someone cheating, make sure it's not me.
-
 I decided to go through the Codility coding lessons, using Javascript. I'll be posting my solutions here.
 
 ## 01 TapeEquilibrium

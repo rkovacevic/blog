@@ -4,8 +4,6 @@ date: 2015/10/10
 tags: [codility,algorithms,javascript]
 ---
 
-> Disclaimer: If you're using this to cheat on job interviews, it's not my fault, however it goes. If you're catching someone cheating, make sure it's not me.
-
 Alright, lesson 2, let's go.
 
 ## 01 FrogRiverOne
