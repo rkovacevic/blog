@@ -130,6 +130,7 @@
                 "React",
                 "Redux",
                 "Angular",
+                "Mocha",
                 "Node",
                 "PlayFramework"
             ]
@@ -139,7 +140,15 @@
             "keywords": [
                 "Linux",
                 "Git",
-                "PostgreSQL"
+                "PostgreSQL",
+                "MongoDB"
+            ]
+        },
+        {
+            "name": "Platforms",
+            "keywords": [
+                "Heroku",
+                "Amazon Web Services"
             ]
         }
     ],
