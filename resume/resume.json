@@ -6,7 +6,7 @@
         "email": "robert.kovacevic1@gmail.ocm",
         "phone": "skype:robert.kovacevic1",
         "website": "http://rkovacevic.github.io",
-        "summary": "I started programming when I was 10 years old, in QBasic on my 386 PC. I haven't stoped since, and have been doing it professionally for the last 7 years. I worked on telco systems in Java, developed mobile apps for iOS and I'm currently most interested in the brave new world of Javascript. ",
+        "summary": "Robert is a highly skilled software developer with over seven years of professional experience. He works with Java, Objective-C (iOS), and JavaScript, with a primary focus on the latter. He is a great communicator and an excellent fit in any team.",
         "location": {
             "city": "Osijek",
             "countryCode": "Croatia"
@@ -28,6 +28,11 @@
                 "url": "http://github.com/rkovacevic"
             },
             {
+                "network": "Toptal",
+                "username": "robert-kovacevic",
+                "url": "https://www.toptal.com/resume/robert-kovacevic"
+            },
+            {
                 "network": "StackOverflow",
                 "username": "rkovacevic",
                 "url": "http://stackoverflow.com/users/321734/robert-kova%C4%8Devi%C4%87"
@@ -43,9 +48,11 @@
 
             "summary": "",
             "highlights": [
-                "Worked on critical project for large clients in the telecommunications industry",
-                "Developed an open source implementation of Diameter protocol in NodeJS",
-                "Developed testing tools in Python"
+                "Worked on a critical project for large clients in the telecommunications industry",
+                "Developed an open source implementation of Diameter protocol in Node.js",
+                "Developed testing tools in Python",
+                "Worked on end-to-end testing using RobotFramework",
+                "Improved build automation with Jenkins"
             ]
         },
         {
