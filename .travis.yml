@@ -39,7 +39,7 @@ script:
 
 after_success:
 - cd resume
-- resume export index.html -t modern
+- resume export index.html -t short
 - cd ..
 - mkdir .deploy
 - cd .deploy
